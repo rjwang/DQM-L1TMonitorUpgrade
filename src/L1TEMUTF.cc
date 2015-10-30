@@ -1,11 +1,11 @@
 /*
- * \file L1TCSCTF.cc
+ * \file L1TEMUTF.cc
  *
  * \author J. Berryhill
  *
  */
 
-#include "DQM/L1TMonitor/interface/L1TCSCTF.h"
+#include "DQM/L1TMonitor/interface/L1TEMUTF.h"
 #include "DQMServices/Core/interface/DQMStore.h"
 
 // includes to fetch all reguired data products from the edm::Event
@@ -22,7 +22,7 @@
 using namespace std;
 using namespace edm;
 
-L1TCSCTF::L1TCSCTF(const ParameterSet& ps)
+L1TEMUTF::L1TEMUTF(const ParameterSet& ps)
 // if some piece of data is absent - configure corresponding source with 'null:'
 //  : csctfSource_( ps.getParameter< InputTag >("csctfSource") )
   : gmtProducer( ps.getParameter< InputTag >("gmtProducer") ),
@@ -35,7 +35,7 @@ L1TCSCTF::L1TCSCTF(const ParameterSet& ps)
   // verbosity switch
   verbose_ = ps.getUntrackedParameter<bool>("verbose", false);
 
-  if(verbose_) edm::LogInfo("DataNotFound") << "L1TCSCTF: constructor...." << endl;
+  if(verbose_) edm::LogInfo("DataNotFound") << "L1TEMUTF: constructor...." << endl;
 
   outputFile_ = ps.getUntrackedParameter<string>("outputFile", "");
   if ( outputFile_.size() != 0 )
@@ -105,7 +105,7 @@ L1TCSCTF::L1TCSCTF(const ParameterSet& ps)
   mbtracksToken_ = consumes<L1CSCTrackCollection>(mbtracksTag_);
 }
 
-L1TCSCTF::~L1TCSCTF()
+L1TEMUTF::~L1TEMUTF()
 {
 
   for(unsigned int j=0; j<2; j++)
@@ -115,16 +115,16 @@ L1TCSCTF::~L1TCSCTF()
 
 }
 
-void L1TCSCTF::dqmBeginRun(const edm::Run& r, const edm::EventSetup& c){
+void L1TEMUTF::dqmBeginRun(const edm::Run& r, const edm::EventSetup& c){
 }
 
-void L1TCSCTF::bookHistograms(DQMStore::IBooker &ibooker, edm::Run const&, edm::EventSetup const&)
+void L1TEMUTF::bookHistograms(DQMStore::IBooker &ibooker, edm::Run const&, edm::EventSetup const&)
 {
   m_scalesCacheID  = -999;
   m_ptScaleCacheID = -999;
 
   nev_ = 0;
-  ibooker.setCurrentFolder("L1T/L1TCSCTF");
+  ibooker.setCurrentFolder("L1T/L1TEMUTF");
 
       //  Error counting histogram:
       //  1) checks TF data integrity (error rate - first bin),
@@ -649,7 +649,7 @@ void L1TCSCTF::bookHistograms(DQMStore::IBooker &ibooker, edm::Run const&, edm::
 
 }
 
-void L1TCSCTF::analyze(const Event& e, const EventSetup& c)
+void L1TEMUTF::analyze(const Event& e, const EventSetup& c)
 {
 
   if( c.get< L1MuTriggerScalesRcd > ().cacheIdentifier() != m_scalesCacheID ||
@@ -664,12 +664,12 @@ void L1TCSCTF::analyze(const Event& e, const EventSetup& c)
     m_scalesCacheID  = c.get< L1MuTriggerScalesRcd  >().cacheIdentifier();
     m_ptScaleCacheID = c.get< L1MuTriggerPtScaleRcd >().cacheIdentifier();
 
-    edm::LogInfo("L1TCSCTF")  << "Changing triggerscales and triggerptscales...";
+    edm::LogInfo("L1TEMUTF")  << "Changing triggerscales and triggerptscales...";
   }
 
   int NumCSCTfTracksRep = 0;
   nev_++;
-  if(verbose_) edm::LogInfo("DataNotFound") << "L1TCSCTF: analyze...." << endl;
+  if(verbose_) edm::LogInfo("DataNotFound") << "L1TEMUTF: analyze...." << endl;
 
   edm::Handle<L1MuGMTReadoutCollection> pCollection;
   if( gmtProducer.label() != "null" )

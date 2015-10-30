@@ -9,8 +9,8 @@ DEFINE_FWK_MODULE(L1TFED);
 #include <DQM/L1TMonitor/interface/L1TCSCTPG.h>
 DEFINE_FWK_MODULE(L1TCSCTPG);
 
-#include <DQM/L1TMonitor/interface/L1TCSCTF.h>
-DEFINE_FWK_MODULE(L1TCSCTF);
+#include <DQM/L1TMonitor/interface/L1TEMUTF.h>
+DEFINE_FWK_MODULE(L1TEMUTF);
 
 #include <DQM/L1TMonitor/interface/L1TDTTPG.h>
 DEFINE_FWK_MODULE(L1TDTTPG);
