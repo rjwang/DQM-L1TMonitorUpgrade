@@ -1,8 +1,8 @@
-#ifndef L1TCSCTF_H
-#define L1TCSCTF_H
+#ifndef L1TEMUTF_H
+#define L1TEMUTF_H
 
 /*
- * \file L1TCSCTF.h
+ * \file L1TEMUTF.h
  *
  * \author J. Berryhill
  *
@@ -55,15 +55,15 @@
 // class decleration
 //
 
-class L1TCSCTF : public thread_unsafe::DQMEDAnalyzer {
+class L1TEMUTF : public thread_unsafe::DQMEDAnalyzer {
 
  public:
 
   // Constructor
-  L1TCSCTF(const edm::ParameterSet& ps);
+  L1TEMUTF(const edm::ParameterSet& ps);
 
   // Destructor
-  virtual ~L1TCSCTF();
+  virtual ~L1TEMUTF();
 
  protected:
   // Analyze
