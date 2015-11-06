@@ -54,6 +54,9 @@ from DQM.L1TMonitor.L1TDTTF_cfi import *
 # CSCTF DQM module 
 from DQM.L1TMonitor.L1TCSCTF_cff import *
 
+# EMUTF DQM module 
+from DQM.L1TMonitor.L1TEMUTF_cff import *
+
 # RPC DQM module - non-standard name of the module
 from DQM.L1TMonitor.L1TRPCTF_cfi import *
 
@@ -141,10 +144,11 @@ l1ExtraStage1DqmSeq = cms.Sequence(
 l1tMonitorOnline = cms.Sequence(
                           bxTiming +
                           l1tDttf +
-                          l1tCsctf + 
+                          l1tCsctf +
+                          l1tEmutf +
                           l1tRpctf +
                           l1tGmt +
-                          l1tGt + 
+                          l1tGt +
                           l1ExtraDqmSeq +
                           l1tBPTX +
                           l1tRate +
@@ -155,7 +159,8 @@ l1tMonitorOnline = cms.Sequence(
 l1tMonitorStage1Online = cms.Sequence(
                           bxTiming +
                           l1tDttf +
-                          l1tCsctf + 
+                          l1tCsctf +
+                          l1tEmutf +
                           l1tRpctf +
                           l1tGmt +
                           l1tGt +
