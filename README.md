@@ -1,5 +1,7 @@
 # DQM-L1TMonitorUpgrade
 
+When this packaged is cloned locally, it should be placed in CMSSW_X_X_X/src/DQM/. The directory containing it should be renamed to L1TMonitor so that its paths match the rest of the CMMSSW package.
+
 Files renamed:
  
 	./interface/L1TCSCTF.h  -->  ./interface/L1TEMUTF.h
