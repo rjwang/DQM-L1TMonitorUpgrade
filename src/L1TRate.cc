@@ -32,8 +32,7 @@ using namespace edm;
 using namespace std;
 
 //_____________________________________________________________________
-L1TRate::L1TRate(const ParameterSet & ps) :
-  m_l1GtUtils(ps, consumesCollector(), false, *this) {
+L1TRate::L1TRate(const ParameterSet & ps){
 
   m_maxNbins   = 2500; // Maximum LS for each run (for binning purposes)
   m_parameters = ps;
@@ -105,8 +104,7 @@ void L1TRate::bookHistograms(DQMStore::IBooker &ibooker, const edm::Run&, const 
  
   // Getting Lowest Prescale Single Object Triggers from the menu
   L1TMenuHelper myMenuHelper = L1TMenuHelper(iSetup);
-  m_l1GtUtils.retrieveL1EventSetup(iSetup);
-  m_selectedTriggers = myMenuHelper.getLUSOTrigger(m_inputCategories, m_refPrescaleSet, m_l1GtUtils);
+  m_selectedTriggers = myMenuHelper.getLUSOTrigger(m_inputCategories,m_refPrescaleSet);
 
   //-> Getting template fits for the algLo cross sections
   int srcAlgoXSecFit = m_parameters.getParameter<int>("srcAlgoXSecFit");
