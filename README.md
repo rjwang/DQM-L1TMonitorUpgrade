@@ -2,6 +2,7 @@
 
 
 Checkout:
+
 	cmsrel CMSSW_7_6_0_pre7
 	cd CMSSW_7_6_0_pre7/src
 	cmsenv
