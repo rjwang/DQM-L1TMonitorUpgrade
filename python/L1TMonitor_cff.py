@@ -143,8 +143,8 @@ l1ExtraStage1DqmSeq = cms.Sequence(
 
 l1tMonitorOnline = cms.Sequence(
                           bxTiming +
-                          l1tDttf +
-                          l1tCsctf +
+                          #l1tDttf +
+                          #l1tCsctf +
                           l1tEmutf +
                           l1tRpctf +
                           l1tGmt +
@@ -158,8 +158,8 @@ l1tMonitorOnline = cms.Sequence(
 
 l1tMonitorStage1Online = cms.Sequence(
                           bxTiming +
-                          l1tDttf +
-                          l1tCsctf +
+                          #l1tDttf +
+                          #l1tCsctf +
                           l1tEmutf +
                           l1tRpctf +
                           l1tGmt +

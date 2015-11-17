@@ -3,13 +3,13 @@ import FWCore.ParameterSet.Config as cms
 l1tEmutf = cms.EDAnalyzer("L1TEMUTF",
     gmtProducer = cms.InputTag("null"),
 
-    statusProducer = cms.InputTag("csctfDigis"),
+    statusProducer = cms.InputTag("null"),
     outputFile = cms.untracked.string(''),
-    lctProducer = cms.InputTag("csctfDigis"),
+    lctProducer = cms.InputTag("simCscTriggerPrimitiveDigis"),
     verbose = cms.untracked.bool(False),
     gangedME11a = cms.untracked.bool(False), ## Run2: False; Run1: True
-    trackProducer = cms.InputTag("csctfDigis"),
-    mbProducer = cms.InputTag("csctfDigis:DT"),
+    trackProducer = cms.InputTag("L1CSCTFTrackConverter"),
+    mbProducer = cms.InputTag("null"),
     DQMStore = cms.untracked.bool(True),
     disableROOToutput = cms.untracked.bool(True)
 )

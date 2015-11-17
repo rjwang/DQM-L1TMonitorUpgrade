@@ -27,7 +27,7 @@ if l1DqmEnv == 'file' :
     #globalTagType = 'R'
 
     if globalTagType == 'HLT' :
-        globalTagValue = 'GR_H_V44'
+        globalTagValue = 'GR_H_V58C'
     elif globalTagType == 'P' :
         globalTagValue = 'GR_P_V29'
     elif globalTagType == 'E' :
