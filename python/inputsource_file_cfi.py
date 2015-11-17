@@ -9,8 +9,8 @@ import FWCore.ParameterSet.Config as cms
 
 # choose one sample identifier from the list of data samples 
 #
-sampleIdentifier = '165633-CAFDQM'
-#sampleIdentifier = '195378'
+#sampleIdentifier = '165633-CAFDQM'
+sampleIdentifier = '251131'
 
 maxNumberEvents = 5000
 
@@ -37,7 +37,20 @@ if sampleIdentifier == '195378' :
     selectedLumis= cms.untracked.VLuminosityBlockRange(
                                                 '195378:1275-195378:max'
                                                 )
-           
+
+elif sampleIdentifier == '251131' :
+    runNumber = '251131'
+    dataset = 'None'
+    dataType = 'RAW'
+    useDAS = False
+    readFiles.extend( ['/store/data/Run2015B/SingleMu/RAW/v1/000/251/131/00000/0C18F8EA-FB24-E511-98C6-02163E013455.root',
+                       '/store/data/Run2015B/SingleMu/RAW/v1/000/251/131/00000/584AA782-F524-E511-9277-02163E0119DB.root',
+                       '/store/data/Run2015B/SingleMu/RAW/v1/000/251/131/00000/82298615-F824-E511-8BD6-02163E011FD5.root',
+                       '/store/data/Run2015B/SingleMu/RAW/v1/000/251/131/00000/CCEFE980-F524-E511-A776-02163E013656.root',
+                       '/store/data/Run2015B/SingleMu/RAW/v1/000/251/131/00000/DCAA0D81-F724-E511-BD2C-02163E011ABD.root',
+                       '/store/data/Run2015B/SingleMu/RAW/v1/000/251/131/00000/DE75C18D-FB24-E511-A8AE-02163E011D0D.root',
+                       '/store/data/Run2015B/SingleMu/RAW/v1/000/251/131/00000/EA8CA37D-F724-E511-BB50-02163E01361A.root' ] ); 
+
 elif sampleIdentifier == '195379' :
     runNumber = '195379'
     dataset = '/MinimumBias/Run2012B-v1/RAW'
